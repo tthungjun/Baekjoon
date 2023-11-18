@@ -3,7 +3,7 @@
 #include <cmath>
 using namespace std;
 
-// 2745¹ø ´Ù½Ã º¸±â!!
+// 2745ë²ˆ ë‹¤ì‹œ ë³´ê¸°!!
 int main() {
 	int N;
 	string num;
@@ -54,51 +54,3 @@ int main() {
 
 	return 0;
 }
-
-// 10798¹ø ³Êµµ!!
-/*int main() {
-
-	// ¹è¿­ »ý¼º
-	char** matrix = new char* [5];
-
-	for (int i = 0; i < 5; i++) {
-		matrix[i] = new char[15];
-	}
-
-	// ¹è¿­ ÃÊ±âÈ­
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 15; j++) {
-			matrix[i][j] = '.';
-		}
-	}
-
-	// ¹è¿­ ´Ù½Ã ÃÊ±âÈ­
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < 15; j++){
-			char cell;
-			cin >> cell;
-
-			if (cell == '\n' || cin.fail()) {
-				break;
-			}
-
-			matrix[i][j] = cell;
-		}
-	}
-
-	for (int i = 0; i < 15; i++) {
-		for (int j = 0; j < 5; j++) {
-			if ((matrix[j][i] >= '0' && matrix[j][i] <= '9') || (matrix[j][i] >= 'A' && matrix[j][i] <= 'Z') || (matrix[j][i] >= 'a' && matrix[j][i] <= 'z')) {
-				std::cout << matrix[j][i];
-			}
-		}
-	}
-
-	for (int i = 0; i < 5; i++) {
-		delete[] matrix[i];
-	}
-
-	delete[] matrix;
-
-	return 0;
-}*/
