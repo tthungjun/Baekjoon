@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+// 코드는 잘 작동하지만, 메모리 초과를 일으킴
+// 해결해야 됨!!
 
 static void vec(int init, int num, vector<int>& primes) {
 	while (num != 1) {
