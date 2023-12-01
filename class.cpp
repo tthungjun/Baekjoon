@@ -2,18 +2,6 @@
 #include <cstdlib>
 using namespace std;
 
-/*class S {
-	int n;
-
-public:
-	S(int) {
-		n = 1;
-	}
-	S() {
-		n = 0;
-	}
-};*/
-
 class SimpleRational {
 	int numerator;
 	int denominator;
@@ -59,16 +47,14 @@ void print_fraction(SimpleRational f) {
 	std::cout << f.get_numerator() << "/" << f.get_denominator();
 }
 
-// °°Àº ºñÀ²ÀÎÁö ÆÇ´Ü
+// ê°™ì€ ë¹„ìœ¨ì¸ì§€ íŒë‹¨
 bool ratio(SimpleRational f1, SimpleRational f2) {
 	return (f1.get_numerator() * f2.get_denominator() == f1.get_denominator() * f2.get_numerator());
 }
 
-SimpleRational gcd(int a, int b)
+// ê¸°ì¡´ì—ëŠ” i, jê°€ ê³„ì† ìž¬ì´ˆê¸°í™”ë˜ëŠ” ë¬¸ì œ ë°œìƒ
+int gcd(int a, int b)
 {
-	int i = a;
-	int j = b;
-
 	int r = 0;
 
 	if (a < b)
@@ -77,7 +63,7 @@ SimpleRational gcd(int a, int b)
 	}
 	else if (a % b == 0)
 	{
-		return {j / b, i / b};
+		return b;
 	}
 	else if (true)
 	{
@@ -108,16 +94,16 @@ int main() {
 		cout << "nonono" << endl;
 	}
 
-
-	SimpleRational fract1{ 1, 2 }, fract2{ 2, 3 };
+	SimpleRational fract1{ 5, 9 }, fract2{ 3, 4 };
 	auto prod = multiply(fract1, fract2);
-	auto result = gcd(prod.get_denominator(), prod.get_numerator());
+	int gcd2 = gcd(prod.get_denominator(), prod.get_numerator());
 	cout << "The product of ";
 	print_fraction(fract1);
 	cout << " and ";
 	print_fraction(fract2);
 	cout << " is ";
-	print_fraction(result);
+	SimpleRational bunsu(prod.get_numerator() / gcd2, prod.get_denominator() / gcd2);
+	print_fraction(bunsu);
 	cout << '\n';
 
 	return 0;
