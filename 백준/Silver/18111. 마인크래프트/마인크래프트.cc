@@ -13,13 +13,22 @@ int main() {
 		}
 	}
 
-	int low_layer = 0;
-	int h_layer = 256;
+	int low_layer = 100;
+	int h_layer = 0;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			if (low_layer > mincraft[i][j])
+				low_layer = mincraft[i][j];
+
+			if (h_layer < mincraft[i][j])
+				h_layer = mincraft[i][j];
+		}
+	}
 
 	int t = 0;
 	int mid_block = b;
 	int f_layer = low_layer;
-	long int f_t = 1280000000;
+	long int f_t = 128000000;
 
 	while (low_layer <= h_layer) {
 		t = 0;
