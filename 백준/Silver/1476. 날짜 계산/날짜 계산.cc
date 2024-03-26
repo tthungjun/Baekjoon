@@ -2,24 +2,16 @@
 using namespace std;
 
 int main() {
-	int e, s, m;
-	cin >> e >> s >> m;
-
+	int E, S, M;
 	int year = 1;
-	int e_1 = 1, s_1 = 1, m_1 = 1;
 
-	while (true) {
-		if (e == e_1 && s == s_1 && m == m_1) {
+	cin >> E >> S >> M;
+
+	while (1) {
+		if (((year-1) % 15 + 1) == E && ((year-1) % 28 + 1) == S && ((year - 1) % 19+1) == M) {
 			cout << year;
 			break;
 		}
-		e_1++;
-		if (e_1 == 16) e_1 = 1;
-		s_1++;
-		if (s_1 == 29) s_1 = 1;
-		m_1++;
-		if (m_1 == 20) m_1 = 1;
-
 		year++;
 	}
 
